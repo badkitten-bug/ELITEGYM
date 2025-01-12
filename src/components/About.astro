@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  linkText: string;
+  imageOne:string;
+  imageTwo:string;
+}
+const { linkText, imageOne, imageTwo } = Astro.props;
+---
+
+<section class="py-12">
+  <div class="grid grid-cols-2 p-4">
+    <div>
+      <h1 class="text-white text-5xl italic max-w-xs yellowText pb-8">Acerca de nuestra familia Elite</h1>
+      <p class="text-white max-w-sm">
+        Elite Gym fue fundado en 2021 por Edwin Mendoza con el objetivo de un espacio dedicado al bienestar físico. Desde entonces, hemos crecido rápidamente, ofreciendo entrenamientos como CrossFit para todas las edades. Con instalaciones en constante expansión, nos enorgullece ser una familia unida que promueve la salud y el fitness en cada miembro. ¡Únete a nosotros y forma parte de Elite Gym!
+      </p>
+      <!-- <p class="text-white mt-8 underline">
+        <a href={linkText}>Learn more</a>
+      </p> -->
+    </div>
+    <div class="grid grid-cols-2">
+        <Image src={'/images/'+imageOne}
+        width={600}
+        height={600/1.5}
+        alt="Gym Instructor"
+        class="rounded-md object-cover w-48"/>
+        <Image src={'/images/'+imageTwo}
+        width={600} height={600/1.5} alt="Boxing Instructor" class="rounded-md object-cover w-48 pt-8"/>
+    </div>
+  </div>
+</section>

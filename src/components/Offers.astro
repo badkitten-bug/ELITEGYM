@@ -1,0 +1,31 @@
+---
+import ImageCard from "./ImageCard.astro";
+const offers = [
+    {
+        imageURL:"imageprotein.jpg",
+        offerText:"Suplementos deportivos naturales"
+    },
+    {
+        imageURL:"rowing.jpg",
+        offerText:"Entrenamiento funcional"
+    },
+    {
+        imageURL:"skipping.jpg",
+        offerText:"Ropa deportiva"
+    }
+]
+---
+
+
+<section class="py-12 text-center">
+<h1 class="yellowText text-5xl italic uppercase">Lo que ofrecemos</h1>
+<p class="text-white">Estamos comprometidos a brindarte la mejor experiencia de entrenamiento.</p>
+<div class="grid grid-cols-1 md:grid-cols-3">
+{
+    offers.map((offer)=>(
+        <ImageCard imageURL={offer.imageURL} text={offer.offerText} />
+    ))
+}
+
+</div>
+</section>
